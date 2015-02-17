@@ -3,7 +3,13 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies 
+  :dependencies
   [[org.clojure/clojure "1.6.0"]
-   [org.scream3r/jssc "2.8.0"]]
-  :main veman.core)
+   [org.scream3r/jssc "2.8.0"]
+   [midje "1.6.3"]]
+  :main veman.core
+
+
+  :profiles {:dev {:dependencies [[midje "1.6.3"]]}}
+  )
+
