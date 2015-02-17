@@ -19,26 +19,27 @@
         (recur port res)))))
 
 
-(let [port (SerialPort. port-id)]
-  (try
-    (if (.openPort port)
-      (do
-        (.setFlowControlMode port SerialPort/FLOWCONTROL_NONE)
+  (let [port (SerialPort. port-id)]
+    (try
+      (if (.openPort port)
+        (do
+          (.setFlowControlMode port SerialPort/FLOWCONTROL_NONE)
 
-        (command port "prompt" nil)
-        (command port "version" "ver")
-        (command port "id set" "id set 12345678")
-        (command port nil "id get")
-        (command port nil "gpio set A")
-        (command port nil "gpio read A")
+          (command port "prompt" nil)
+          (command port "version" "ver")
+          (command port "id set" "id set 12345678")
+          (command port nil "id get")
+          (command port nil "gpio set A")
+          (command port nil "gpio read A")
 
-        (Thread/sleep 10000)
-        (command port nil "gpio clear A")
-        (command port nil "gpio read A")
+          (Thread/sleep 10000)
+          (command port nil "gpio clear A")
+          (command port nil "gpio read A")
 
-        (Thread/sleep 10000)
-        (.closePort port) )
-      (println "not opened") )
-    (catch SerialPortException ex
-      (if (.isOpened port) (.closePort port))
-      (println (str "caught exception: " (.getMessage ex)) ))))
+          (Thread/sleep 10000)
+          (.closePort port) )
+        (println "not opened") )
+      (catch SerialPortException ex
+        (if (.isOpened port) (.closePort port))
+        (println (str "caught exception: " (.getMessage ex)) )))
+    (println "completed"))
