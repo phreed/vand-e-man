@@ -1,20 +1,18 @@
-# veman
+# vand-e-man
 
-FIXME: description
+Developing a platform for human medical simulation
+A project supporting the development of a hardware platform for medical simulation
 
 ## Installation
 
-Download from http://example.com/FIXME.
+https://github.com/phreed/vand-e-man
 
 ## Usage
-
-FIXME: explanation
 
     $ java -jar veman-0.1.0-standalone.jar [args]
 
 ## Options
 
-FIXME: listing of options this app accepts.
 
 ## Examples
 
@@ -24,12 +22,9 @@ FIXME: listing of options this app accepts.
 
 ...
 
-### Any Other Sections
-### That You Think
-### Might be Useful
-
 ## License
 
 Copyright © 2015 FIXME
 
 Distributed under the Eclipse Public License, the same as Clojure.
+
