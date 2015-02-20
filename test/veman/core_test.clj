@@ -54,7 +54,7 @@
         (t/fact "gpio clear 0"
                 (sc/command port nil "gpio clear 0")
                 => "gpio clear 0: gpio clear 0\n\r>")
-        ;(Thread/sleep 10000)
+        (Thread/sleep 10000)
         ;; at this point the voltage is low ~0.001
 
         (t/fact "gpio read 0"
@@ -64,7 +64,7 @@
         (t/fact "gpio set 0"
                 (sc/command port nil "gpio set 0")
                 => "gpio set 0: gpio set 0\n\r>")
-        ;(Thread/sleep 10000)
+        (Thread/sleep 10000)
         ;; at this point the voltage is high ~3.130
 
         (t/fact "gpio read 0"
